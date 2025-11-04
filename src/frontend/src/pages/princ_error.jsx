@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'; 
 
-function LoginError() {
+function princ_error() {
   return (
     <div>
       <h1>Error de Autenticación</h1>

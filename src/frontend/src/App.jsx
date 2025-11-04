@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
-import LoginSuccess from "./pages/LoginSuccess";
-import LoginError from './pages/LoginError';
+import prc from "./pages/prc";
+import prc_success from "./pages/prc_success";
+import princ_error from './pages/princ_error';
 
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/login-error" element={<LoginError />} />
-        <Route path="/login-success" element={<LoginSuccess />} />
+        <Route path="/prc" element={<prc />} />
+        <Route path="/prc_error" element={<princ_error />} />
+        <Route path="/princ_success" element={<prc_success />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSearchParams, useNavigate, replace } from "react-router-dom";
 
-function LoginSuccess() {
+function prc_success() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
