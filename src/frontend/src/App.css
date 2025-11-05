@@ -1,42 +1,551 @@
-#root {
-  max-width: 1280px;
+/* General Body and Container Styles */
+.body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Adjust font as needed */
+  color: #333;
+}
+
+.container {
+  max-width: 1200px; /* Or a suitable max-width for your design */
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+/* Header Styles */
+.header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  display: flex;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo img {
+  height: 40px; /* Adjust logo size */
+  margin-right: 10px;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav ul li {
+  margin-left: 20px;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-info-header {
+  text-align: right;
+  font-size: 0.9em;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0; /* Adjust padding as needed */
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Ensure content is above the background image */
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #fff;
+  color: #000;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire area */
+  opacity: 0.3; /* Adjust opacity to make it a background */
+}
+
+/* Shape of Nature Section */
+.shape-of-nature {
+  background-color: #f8f8f8;
+  padding: 80px 0;
+}
+
+.shape-of-nature .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.shape-of-nature-text {
+  flex: 1;
+}
+
+.shape-of-nature-text h2 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.shape-of-nature-text p {
+  line-height: 1.6;
+}
+
+.shape-of-nature-image {
+  flex: 1;
+  text-align: center;
+}
+
+.shape-of-nature-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: subtle rounded corners */
+}
+
+/* Differentiators Section */
+.differentiators {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.differentiators h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.differentiators h3 {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.differentiators-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for items, assuming the dental root is centered */
+  gap: 30px;
+  align-items: center;
+  justify-items: center; /* Center items within their grid cells */
+  max-width: 900px; /* Limit width of the grid */
+  margin: 0 auto;
+}
+
+.differentiator-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  height: 150px; /* Fixed height for consistent layout */
+  justify-content: center;
+}
+
+.differentiator-item img {
+  max-height: 60px; /* Adjust icon size */
+  margin-bottom: 15px;
+}
+
+.dental-root-image img {
+  max-height: 200px; /* Larger size for the central dental root image */
+  width: auto;
+}
+
+
+/* Digitize Clinic Section */
+.digitize-clinic {
+  background-color: #333;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.digitize-clinic .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.digitize-clinic-content {
+  flex: 1;
+}
+
+.digitize-clinic-content h2 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.digitize-clinic-content p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+.digitize-clinic-content strong {
+  color: #00bcd4; /* Highlight color for "flujo digital" */
+}
+
+.digitize-clinic-buttons .btn {
+  background-color: #00bcd4; /* Greenish/blue button */
+  color: #fff;
+  margin-right: 20px;
+}
+
+.digitize-clinic-image {
+  flex: 1;
+  text-align: right;
+}
+
+.digitize-clinic-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+
+/* Dental Alfaden Description Section */
+.dental-alfaden-description {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.description-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.description-text {
+  flex: 2; /* Takes more space */
+}
+
+.description-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.description-text p {
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.description-image {
+  flex: 1; /* Takes less space */
+  text-align: center;
+}
+
+.description-image img {
+  max-width: 80%; /* Adjust size of the neon tooth */
+  height: auto;
+}
+
+
+/* Works Section */
+.works {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 80px 0;
+  text-align: center;
+}
+
+.works h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+.works p {
+  font-size: 1.1em;
+  margin-bottom: 40px;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: 0.2fr repeat(3, 1fr); /* 20% for label, then 3 equal columns */
+  gap: 15px;
+  align-items: center;
+}
+
+.works-label {
+  writing-mode: vertical-rl; /* Text vertical right-to-left */
+  text-orientation: mixed; /* Keeps characters upright */
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #00bcd4; /* Color of the "DENTAL" text */
+  justify-self: center; /* Center the label vertically */
+}
+
+.works-item {
+  border: 1px solid #ccc; /* Optional: border around images */
+  border-radius: 5px;
+  overflow: hidden; /* Ensures image respects border-radius */
+}
+
+.works-item img {
+  width: 100%;
+  height: 200px; /* Fixed height for work images */
+  object-fit: cover; /* Ensures images cover their area */
+  display: block; /* Remove extra space below image */
+}
+
+/* Dental Lab Banner */
+.dental-lab-banner {
+  background-color: #00bcd4; /* Greenish/blue background */
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.dental-lab-banner .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.dental-lab-banner img {
+  height: 50px; /* Adjust size of tooth icons */
+  filter: invert(100%); /* Make icons white */
+}
+
+.dental-lab-banner h2 {
+  font-size: 2.8em;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+/* Contact Section */
+.contact {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  flex: 1;
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 100px;
+}
+
+.privacy-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+}
+
+.privacy-checkbox input {
+  margin-right: 10px;
+}
+
+.privacy-checkbox a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.contact-form .btn {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 12px;
+  font-size: 1.1em;
+  border-radius: 4px;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 50px 0 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-logo-description {
+  flex: 1;
+}
+
+.footer-logo-description img {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.footer-logo-description p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.social-icons img {
+  height: 30px;
+  margin-right: 15px;
+}
+
+.footer-links, .footer-contact-address {
+  flex: 1;
+}
+
+.footer h4 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #00bcd4; /* Highlight color for headings */
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.footer-contact-address p {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.footer-map {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444; /* Separator line */
+}
+
+.footer-map a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+/* Responsive adjustments (basic example) */
+@media (max-width: 768px) {
+  .header-container,
+  .shape-of-nature .container,
+  .digitize-clinic .container,
+  .description-container,
+  .contact-container,
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav ul {
+    flex-direction: column;
+    margin-top: 20px;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .nav ul li {
+    margin: 10px 0;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .differentiators-grid {
+    grid-template-columns: 1fr;
+  }
 
-.read-the-docs {
-  color: #888;
+  .works-grid {
+    grid-template-columns: 1fr; /* Stack works items */
+  }
+
+  .works-label {
+    writing-mode: horizontal-tb; /* Make label horizontal */
+    margin-bottom: 20px;
+  }
+
+  .dental-lab-banner .container {
+    flex-direction: column;
+  }
 }
