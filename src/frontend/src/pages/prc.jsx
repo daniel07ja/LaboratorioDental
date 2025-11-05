@@ -1,4 +1,4 @@
-function prc (){
+function Prc (){
     const GOOGLE_AUTH_URL = import.meta.env.VITE_GOOGLE_AUTH_URL;
     return(
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
