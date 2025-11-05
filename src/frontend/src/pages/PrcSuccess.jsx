@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSearchParams, useNavigate, replace } from "react-router-dom";
 
-function prc_success() {
+function PrcSuccess() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
@@ -26,4 +26,4 @@ function prc_success() {
   );
 }
 
-export default LoginSuccess;
+export default PrcSuccess;

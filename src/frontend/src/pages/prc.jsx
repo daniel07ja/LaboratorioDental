@@ -11,5 +11,5 @@ function Prc (){
     );
 }
 
-export default Login;
+export default Prc;
 

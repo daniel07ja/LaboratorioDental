@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import prc from "../pages/Prc";
-import prc_success from "./pages/PrcSuccess";
-import princ_error from './pages/PrincError';
+import Prc from "../pages/Prc";
+import PrcSuccess from "./pages/PrcSuccess";
+import PrincError from './pages/PrincError';
 
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/prc" element={<Prc />} />
-        <Route path="/prc_error" element={<princ_error />} />
-        <Route path="/princ_success" element={<prc_success />} />
+        <Route path="/Prc" element={<Prc />} />
+        <Route path="/PrincError" element={<PrincError />} />
+        <Route path="/PrcSuccess" element={<PrcSuccess />} />
       </Routes>
     </BrowserRouter>
   );
