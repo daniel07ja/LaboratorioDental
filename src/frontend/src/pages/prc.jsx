@@ -1,4 +1,7 @@
 import "../app.css";
+import logo from "../../public/logo.svg";
+import dentalMoldImage from "../image/dental mold.png";
+
 function Prc() {
   return (
     <div className="App">
@@ -6,7 +9,7 @@ function Prc() {
       <header className="header">
         <div className="container header-container">
           <div className="logo">
-            <img src="path/to/your/logo.png" alt="Dental Alfaden Logo" /> {/* Replace with your logo path */}
+            <img src={logo} alt="Dental Alfaden Logo" /> {/* Replace with your logo path */}
             <span>Dental Alfaden</span>
           </div>
           <nav className="nav">
@@ -28,12 +31,14 @@ function Prc() {
       <section className="hero">
         <div className="container hero-content">
           <h1>DENTAL ALFADEN</h1>
-          <p>Técnicas innovadoras de diseño digital combinadas con el arte manual de nuestros acabados</p>
+          <p>Técnicas innovadoras de 
+            diseño digital combinadas con 
+            el arte manual de nuestros acabados</p>
           <button className="btn">CONSULTANOS</button>
         </div>
         <div className="hero-background-image">
           {/* Background image of the dental mold */}
-          <img src="/images/dental.jpg" alt="Dental mold" /> {/* Replace with your image path */}
+          <img src={dentalMoldImage} alt="Dental mold" /> {/* Replace with your image path */}
         </div>
       </section>
 
