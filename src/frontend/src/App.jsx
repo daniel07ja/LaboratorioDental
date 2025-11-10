@@ -1,16 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Prc from "./pages/Prc";
-import PrcSuccess from "./pages/PrcSuccess";
-import PrincError from "./pages/PrincError";
-
-
+import Protocolo from "./pages/Protocolo";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Prc />} />
-        <Route path="/PrincError" element={<PrincError />} />
-        <Route path="/PrcSuccess" element={<PrcSuccess />} />
+        <Route path="/protocolo" element={<Protocolo />} />
       </Routes>
     </BrowserRouter>
   );

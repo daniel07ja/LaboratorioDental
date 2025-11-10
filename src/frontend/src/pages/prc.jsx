@@ -1,6 +1,8 @@
 import "../app.css";
 import logo from "../../public/logo.svg";
 import dentalMoldImage from "../image/dental mold.png";
+import facebookIcon from "../../public/facebook.svg";
+import whastsappIcon from "../../public/whatsapp.svg";
 
 function Prc() {
   return (
@@ -9,12 +11,13 @@ function Prc() {
       <header className="header">
         <div className="container header-container">
           <div className="logo">
-            <img src={logo} alt="Dental Alfaden Logo" /> {/* Replace with your logo path */}
+            <img src={logo} alt="Dental Alfaden Logo" /> 
             <span>Dental Alfaden</span>
           </div>
           <nav className="nav">
             <ul>
-              <li><a href="#protocol">PROTOCOLO DE TRABAJO</a></li>
+              <li>
+                <a href="Protocolo">PROTOCOLO DE TRABAJO</a></li>
               <li><a href="#works">WORKS</a></li>
               <li><a href="#team">EQUIPO</a></li>
               <li><a href="#contact">CONTACTA</a></li>
@@ -31,9 +34,10 @@ function Prc() {
       <section className="hero">
         <div className="container hero-content">
           <h1>DENTAL ALFADEN</h1>
-          <p>Técnicas innovadoras de 
-            diseño digital combinadas con 
-            el arte manual de nuestros acabados</p>
+          <p>Técnicas innovadoras de diseño
+            <a>digital combinadas con el arte</a> 
+            <a>manual de nuestros acabados</a> 
+            </p>
           <button className="btn">CONSULTANOS</button>
         </div>
         <div className="hero-background-image">
@@ -176,8 +180,9 @@ function Prc() {
             <img src="path/to/your/logo-white.png" alt="Dental Alfaden Logo White" /> {/* Replace with your logo path */}
             <p>Laboratorio Dental dedicado al flujo digital. Fusionamos las innovadoras técnicas de diseño digital con el arte manual de nuestros acabados.</p>
             <div className="social-icons">
-              <a href="#"><img src="path/to/your/facebook-icon.png" alt="Facebook" /></a> {/* Replace with your icons */}
-              <a href="#"><img src="path/to/your/whatsapp-icon.png" alt="WhatsApp" /></a>
+              <a href="https://www.facebook.com/people/Laboratorio-Dental-Alfaden/61581161378663/?rdid=aXPz4TDclXYQFV38&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F176nKppxCn%2F">
+                <img src={facebookIcon} alt="Facebook" /></a> {/* Replace with your icons */}
+              <a href=""><img src={whastsappIcon} alt="WhatsApp" /></a>
               <a href="#"><img src="path/to/your/tiktok-icon.png" alt="TikTok" /></a>
               <a href="#"><img src="path/to/your/email-icon.png" alt="Email" /></a>
             </div>
@@ -185,8 +190,8 @@ function Prc() {
           <div className="footer-links">
             <h4>Enlaces de interés</h4>
             <ul>
-              <li><a href="#">• Dental Alfaden</a></li>
-              <li><a href="#">• Protocolo de trabajo</a></li>
+              <li><a href="/">• Dental Alfaden</a></li>
+              <li><a href="./Protocolo.jsx">• Protocolo de trabajo</a></li>
               <li><a href="#">• Works</a></li>
               <li><a href="#">• Equipo</a></li>
               <li><a href="#">• Prótesis dental de Zirconio</a></li>
