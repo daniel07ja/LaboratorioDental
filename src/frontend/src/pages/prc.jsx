@@ -1,9 +1,10 @@
 import "../app.css";
-import logo from "../../public/logo.svg";
-import dentalMoldImage from "../image/dental mold.png";
+import logo from "../../public/logo.png";
+import dentalMoldImage from "../../image/dental mold.png";
 import facebookIcon from "../../public/facebook.svg";
 import whastsappIcon from "../../public/whatsapp.svg";
-
+import Hand from "../../image/hand.jpg";
+import trasprente from "../../image/trasfarente.png";
 function Prc() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function Prc() {
               <li><a href="#works">WORKS</a></li>
               <li><a href="#team">EQUIPO</a></li>
               <li><a href="#contact">CONTACTA</a></li>
+              <li><a href="Login">REGISTRARSE</a></li>
             </ul>
           </nav>
           <div className="contact-info-header">
@@ -54,7 +56,7 @@ function Prc() {
             <p>En la nueva era del laboratorio dental basamos nuestras creaciones en darle vida, imitando la naturaleza del ser humano e Integrando en la cavidad bucal un material inerte. De este modo destacamos la creatividad protésica, la personalidad y el diseño de cada detalle de nuestros trabajos.</p>
           </div>
           <div className="shape-of-nature-image">
-            <img src="path/to/your/hand-working-image.jpg" alt="Hand working" /> {/* Replace with your image path */}
+            <img src={Hand} alt="Hand working" /> {/* Replace with your image path */}
           </div>
         </div>
       </section>
@@ -74,7 +76,7 @@ function Prc() {
               <p>Experiencia de más de 15 años</p>
             </div>
             <div className="differentiator-item dental-root-image">
-              <img src="path/to/your/dental-root.png" alt="Dental root" /> {/* Replace with your image path */}
+              <img src={trasprente} alt="Dental root" /> {/* Replace with your image path */}
             </div>
             <div className="differentiator-item">
               <img src="path/to/your/icon-adaptada.png" alt="Estética adaptada icon" /> {/* Replace with your icon path */}

@@ -36,6 +36,7 @@ app.get("/", (req, res) => {
 });
 
 //Rutas que deseo usar
+app.use("/api/users", userRoutes);
 app.use("/api/email", emailRoutes);
 app.use("/api/auth", authRoutes);
 
