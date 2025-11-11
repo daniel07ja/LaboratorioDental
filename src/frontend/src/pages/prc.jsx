@@ -182,7 +182,7 @@ function Prc() {
             <div className="social-icons">
               <a href="https://www.facebook.com/people/Laboratorio-Dental-Alfaden/61581161378663/?rdid=aXPz4TDclXYQFV38&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F176nKppxCn%2F">
                 <img src={facebookIcon} alt="Facebook" /></a> {/* Replace with your icons */}
-              <a href=""><img src={whastsappIcon} alt="WhatsApp" /></a>
+              <a href="https:/wa.me/qr/AMKJLRK7SDTC1"><img src={whastsappIcon} alt="WhatsApp" /></a>
               <a href="#"><img src="path/to/your/tiktok-icon.png" alt="TikTok" /></a>
               <a href="#"><img src="path/to/your/email-icon.png" alt="Email" /></a>
             </div>
