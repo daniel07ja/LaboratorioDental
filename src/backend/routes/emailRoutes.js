@@ -21,7 +21,7 @@ const router = express.Router();
  *                example: usuario@gmail.com
  *              name:
  *                type: string
- *                example: Juan Pérez
+ *                example: Daniel Adin
  *    responses:
  *      200:
  *        description: Email enviado correctamente

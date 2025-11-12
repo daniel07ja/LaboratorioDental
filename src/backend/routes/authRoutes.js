@@ -29,13 +29,13 @@ const router = express.Router();
  *            properties:
  *              email:
  *                type: string
- *                example: margarita@gmail.com
+ *                example: daniizquierdo2000@gmail.com
  *              name:
  *                type: string
- *                example: Margarita
+ *                example: daniel
  *              password:
  *                type: string
- *                example: patito123
+ *                example: daniel123
  *    responses:
  *      201:
  *        description: Usuario registrado exitosamente
@@ -45,6 +45,35 @@ const router = express.Router();
  *        description: Error interno del servidor
  */
 router.post("/register", authControllers.register);
+
+/**
+ * @swagger
+ * /api/auth/login:
+ *  post:
+ *    summary: Iniciar sesion del usuario
+ *    tags: [Auth]
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            properties:
+ *              email:
+ *                type: string
+ *                example: luzclarita@gmail.com
+ *              password:
+ *                type: string
+ *                example: 123
+ *    responses:
+ *      200:
+ *        description: Inicio de sesion exitoso
+ *      401:
+ *        description: Credenciales invalidas
+ *      500:
+ *        description: Error interno del servidor
+ */
+router.post("/login", authControllers.login);
 
 router.get(
   "/google",
