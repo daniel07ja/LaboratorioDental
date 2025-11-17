@@ -1,7 +1,9 @@
 import express from "express";
 import { authControllers } from "../controllers/authControllers.js";
 import passport from "passport";
-
+import { authenticate } from "../middlewares/authMiddlewares.js";
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 const router = express.Router();
 
 /**
@@ -78,7 +80,7 @@ router.post("/login", authControllers.login);
 router.get(
   "/google",
   passport.authenticate("google", {
-    scope: ["profile", "email"], 
+    scope: ["profile", "email"],
   })
 );
 
@@ -89,5 +91,63 @@ router.get(
   }),
   authControllers.googleCallBack
 );
+
+
+/**
+ * @swagger
+ * /api/auth/me:
+ *  get:
+ *    summary: Obtener datos del usuario autenticado
+ *    tags: [Auth]
+ *    security:
+ *      - BearerAuth: []
+ *    responses:
+ *      200:
+ *        description: Datos del usuario obtenidos exitosamente
+ *      401:
+ *        description: Token no proporcionado o inválido
+ *      404:
+ *        description: Usuario no encontrado
+ *      500:
+ *        description: Error interno del servidor
+ */
+router.get('/me', authenticate, async (req, res) => {
+  try {
+    console.log('Usuario desde token:', req.user); // Para debug
+    
+    // Buscar usuario en la base de datos usando Prisma
+    const user = await prisma.user.findUnique({
+      where: { 
+        id: req.user.id 
+      },
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        createdAt: true,
+        // NO seleccionar password
+      }
+    });
+    
+    if (!user) {
+      return res.status(404).json({ 
+        success: false,
+        message: 'Usuario no encontrado' 
+      });
+    }
+
+    res.json({ 
+      success: true,
+      user
+    });
+  } catch (error) {
+    console.error('Error en /me:', error);
+    res.status(500).json({ 
+      success: false,
+      message: 'Error del servidor',
+      error: error.message
+    });
+  }
+});
 
 export default router;

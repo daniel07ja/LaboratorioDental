@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Login() {
   const GOOGLE_AUTH_URL = import.meta.env.VITE_GOOGLE_AUTH_URL;
@@ -9,6 +10,7 @@ function Login() {
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -18,25 +20,26 @@ function Login() {
       const response = await fetch("http://localhost:3000/api/auth/login", {
         method: "POST",
         headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify ({ email, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
-      if(!response.ok){
-        throw new Error (data.message||"Error al iniciar sesion");
-    }
+      if (!response.ok) {
+        throw new Error(data.message || "Error al iniciar sesion");
+      }
 
-    localStorage.setItem("authToken", data.data.token);
-        navigate ("/login-success");
+      // Usar el método login del context
+      login(data.data.token);
+      navigate("/login-success");
 
     } catch (err) {
-        setError(err.message);
+      setError(err.message);
     }
   };
   
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-x-6 bg-white rounded-xl shadow-md">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-md">
         <h1 className="text-2xl font-bold text-center">Iniciar Sesion</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
@@ -71,11 +74,11 @@ function Login() {
               className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
-          {error && <p className="text-sm text-center text-red-500"></p>}
+          {error && <p className="text-sm text-center text-red-500">{error}</p>}
           <div>
             <button
               type="submit"
-              className="w-full px-4 py-2 text-white font-medium bg-blue-500 border border-transparent rounded-md shadow-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 "
+              className="w-full px-4 py-2 text-white font-medium bg-blue-500 border border-transparent rounded-md shadow-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Iniciar Sesion
             </button>
@@ -96,14 +99,14 @@ function Login() {
         </div>
 
         <p className="text-sm text-center text-gray-600">
-          No tienes una cuenta?
+          No tienes una cuenta?{' '}
+          <Link
+            to="/register"
+            className="font-medium text-blue-600 hover:text-orange-500"
+          >
+            Registrate aqui
+          </Link>
         </p>
-        <Link
-          to="/register"
-          className="font-medium text-blue-600 hover:text-orange-500"
-        >
-          Registrate aqui
-        </Link>
       </div>
     </div>
   );

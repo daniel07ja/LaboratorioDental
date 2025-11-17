@@ -1,36 +1,16 @@
 import "../App.css";
-import logo from "../../public/logo.png";
 import dentalMoldImage from "../../image/dental mold.png";
-import facebookIcon from "../../public/facebook.svg";
-import whastsappIcon from "../../public/whatsapp.svg";
+import logo from '../assets/logo.png';
 import Hand from "../../image/hand.jpg";
 import trasprente from "../../image/trasfarente.png";
+import Header from "../components/Header";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 function Prc() {
   return (
     <div className="App">
       {/* Header Section */}
-      <header className="header">
-        <div className="container header-container">
-          <div className="logo">
-            <img src={logo} alt="Dental Alfaden Logo" /> 
-            <span>Dental Alfaden</span>
-          </div>
-          <nav className="nav">
-            <ul>
-              <li>
-                <a href="Protocolo">PROTOCOLO DE TRABAJO</a></li>
-              <li><a href="#works">WORKS</a></li>
-              <li><a href="#team">EQUIPO</a></li>
-              <li><a href="#contact">CONTACTA</a></li>
-              <li><a href="Login">REGISTRARSE</a></li>
-            </ul>
-          </nav>
-          <div className="contact-info-header">
-            <p>info@dentalalfaden.com</p>
-            <p>+51 942633807</p>
-          </div>
-        </div>
-      </header>
+      <Header></Header>
 
       {/* Hero Section */}
       <section className="hero">
@@ -141,77 +121,16 @@ function Prc() {
       {/* Dental Laboratory Banner */}
       <section className="dental-lab-banner">
         <div className="container">
-          <img src="path/to/your/tooth-icon-left.png" alt="Tooth icon" /> {/* Replace with your image path */}
+          <img src={logo}  className="h-10 object-contain"/> {/* Replace with your image path */}
           <h2>LABORATORIO DENTAL</h2>
-          <img src="path/to/your/tooth-icon-right.png" alt="Tooth icon" /> {/* Replace with your image path */}
+          <img src={logo} className="h-10 object-contain" /> {/* Replace with your image path */}
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="contact" id="contact">
-        <div className="container contact-container">
-          <div className="contact-info">
-            <h2>¿Necesitas más información?</h2>
-            <p>Contáctanos a través de nuestro teléfono, email o completando nuestro el siguiente formulario de contacto.</p>
-            <p>942633807</p>
-            <p>942633807</p>
-            <p>admind@gmail.com</p>
-            <p>Devolvemos la sonrisa a nuestros clientes</p>
-          </div>
-          <div className="contact-form">
-            <h2>¡Consúltanos!</h2>
-            <form>
-              <input type="text" placeholder="Tu nombre *" />
-              <input type="email" placeholder="Tu email *" />
-              <input type="tel" placeholder="Tu teléfono *" />
-              <textarea placeholder="¿En qué podemos ayudarte?"></textarea>
-              <div className="privacy-checkbox">
-                <input type="checkbox" id="privacy" />
-                <label htmlFor="privacy">Acepto la <a href="#">Política de privacidad</a></label>
-              </div>
-              <button type="submit" className="btn">ENVIAR MENSAJE</button>
-            </form>
-          </div>
-        </div>
-      </section>
-
+      <Contact></Contact>
       {/* Footer Section */}
-      <footer className="footer">
-        <div className="container footer-container">
-          <div className="footer-logo-description">
-            <img src="path/to/your/logo-white.png" alt="Dental Alfaden Logo White" /> {/* Replace with your logo path */}
-            <p>Laboratorio Dental dedicado al flujo digital. Fusionamos las innovadoras técnicas de diseño digital con el arte manual de nuestros acabados.</p>
-            <div className="social-icons">
-              <a href="https://www.facebook.com/people/Laboratorio-Dental-Alfaden/61581161378663/?rdid=aXPz4TDclXYQFV38&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F176nKppxCn%2F">
-                <img src={facebookIcon} alt="Facebook" /></a> {/* Replace with your icons */}
-              <a href="https:/wa.me/qr/AMKJLRK7SDTC1"><img src={whastsappIcon} alt="WhatsApp" /></a>
-              <a href="#"><img src="path/to/your/tiktok-icon.png" alt="TikTok" /></a>
-              <a href="#"><img src="path/to/your/email-icon.png" alt="Email" /></a>
-            </div>
-          </div>
-          <div className="footer-links">
-            <h4>Enlaces de interés</h4>
-            <ul>
-              <li><a href="/">• Dental Alfaden</a></li>
-              <li><a href="./Protocolo.jsx">• Protocolo de trabajo</a></li>
-              <li><a href="#">• Works</a></li>
-              <li><a href="#">• Equipo</a></li>
-              <li><a href="#">• Prótesis dental de Zirconio</a></li>
-              <li><a href="#">• Prótesis dental híbrida</a></li>
-            </ul>
-          </div>
-          <div className="footer-contact-address">
-            <h4>Enlaces</h4>
-            <p>• 942633807</p>
-            <p>• 942633807</p>
-            <p>• admind@gmail.com</p>
-            <p>• C.p Monte Alegre Neshuya Sector 2 Junta Vecinal Mariscal Andres Avelino Caceres</p>
-          </div>
-        </div>
-        <div className="footer-map">
-          <a href="https://maps.app.goo.gl/cxP6HdfFPfsv9WyaA" target="_blank" rel="noopener noreferrer">https://maps.app.goo.gl/cxP6HdfFPfsv9WyaA</a>
-        </div>
-      </footer>
+      <Footer></Footer>
     </div>
   );
 }
