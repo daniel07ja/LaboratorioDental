@@ -1,4 +1,4 @@
-import "../app.css";
+import "../App.css";
 import logo from "../../public/logo.png";
 import dentalMoldImage from "../../image/dental mold.png";
 import facebookIcon from "../../public/facebook.svg";

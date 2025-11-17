@@ -9,7 +9,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
   id Int @id @default(autoincrement())
   email String @unique
@@ -17,4 +16,6 @@ model User {
   password String? //Metodo tradicional
   googleId String? @unique //Metodo login con Google
   avatar String? //Obtener la foto de perfil
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }

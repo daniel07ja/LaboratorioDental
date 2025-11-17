@@ -12,7 +12,7 @@ function App() {
         <Route path="/" element={<Prc />} />
         <Route path="/Protocolo" element={<Protocolo />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/loginSuccess" element={<LoginSuccess />} />
+        <Route path="/login-success" element={<LoginSuccess />} />
         <Route path="/loginError" element={<LoginError />} />
         <Route path="/register" element={<Register />} />
       </Routes>

@@ -29,13 +29,13 @@ const router = express.Router();
  *            properties:
  *              email:
  *                type: string
- *                example: daniizquierdo2000@gmail.com
+ *                example: margarita@gmail.com
  *              name:
  *                type: string
- *                example: daniel
+ *                example: Margarita
  *              password:
  *                type: string
- *                example: daniel123
+ *                example: patito123
  *    responses:
  *      201:
  *        description: Usuario registrado exitosamente
